@@ -10,10 +10,13 @@ import com.example.datastoresample.screens.WelcomeScreen
 
 @Composable
 fun ScreenSetup(
-    navController: NavHostController
+    navController: NavHostController,
+    startDestination: String = Screen.Welcome.route
 ) {
-    NavHost(navController = navController,
-        startDestination = Screen.Welcome.route) {
+    NavHost(
+        navController = navController,
+        startDestination = startDestination
+    ) {
         composable(Screen.Welcome.route) {
             WelcomeScreen(navController = navController)
         }
